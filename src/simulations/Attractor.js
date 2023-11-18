@@ -1,18 +1,4 @@
 import get from 'lodash.get'
-import forEach from 'lodash.foreach'
-
-const acceptableSmoothingCodes = [
-    [],          // no zero in 9 grid coding
-    [6, 8, 9],     // upper-left would match with any of these
-    [4, 6, 7, 8, 9], // upper-middle would match with any of these
-    [4, 7, 8],     // upper-right would match with any of these
-    [2, 3, 6, 8, 9], // mid-left matches
-    [],          // no 5 in 9 grid coding as that is the target pixel that by definition is empty
-    [1, 2, 4, 7, 8], // mid-right matches
-    [2, 3, 6],     // lower-left matches
-    [1, 2, 3, 4, 6], // lower-mid matches
-    [1, 2, 4],     // lower-right matches
-]
 
 export function map(min, max, curr, newMin, newMax) {
     let t = Math.max(0, Math.min(1, (curr - min) / (max - min)))
@@ -293,7 +279,6 @@ export class PixelHitGrid {
         let hitCountDistribution = {}
         let maxHitCount = 0
         let minHitCount = 999999
-        let buckets = 0
         let emptyPixels = 0
 
         for (let y = 0; y < this.height; y++) {
@@ -308,7 +293,6 @@ export class PixelHitGrid {
                     }
                     if (!hitCountDistribution[timesHit]) {
                         hitCountDistribution[timesHit] = { occurrences: 1 }
-                        buckets++
                     } else {
                         hitCountDistribution[timesHit].occurrences++
                     }

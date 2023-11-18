@@ -1,12 +1,10 @@
-import { useState } from "react"
-import Vector from "../Vector"
 import colors, {ColorLerper} from "../colors"
 import SketchTweaker from "../components/SketchTweaker"
 import P5Controller from "../components/P5Controller"
 import BotSystem, { Bot } from "../components/BotSystem"
 import P5Canvas from "../components/P5Canvas"
 import { VariableChangeSet, makeSelectorOptions } from "../components/VariableChanger"
-import initialize3dProjection, { rotateAroundX, rotateAroundY, rotateAroundZ } from "../projection3d.js"
+import initialize3dProjection from "../projection3d.js"
 
 const pow = Math.pow
 const cos = Math.cos

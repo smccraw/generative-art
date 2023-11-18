@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import get from "lodash.get"
 import forEach from "lodash.foreach"
 import p5 from "p5"
@@ -36,7 +36,6 @@ export default class AttractorCanvas extends React.Component {
         if (!preset) {
             presetIndex = -1
             preset = {
-                colorIndex: 0,
                 smoothingFactor: 0,
                 backgroundType: this.state.backgroundType,
                 iterations: this.state.iterations || 10000000,

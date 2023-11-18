@@ -5,7 +5,6 @@ import utils from "../utils.js"
 import Vector, { rads } from "../Vector.js"
 import SketchTweaker from "../components/SketchTweaker.js"
 import { drawSandSplineGrains } from "../painters/SandPainters.js"
-import { drawSolidSpline, drawDeltaSolidSpline } from "../painters/LinePainters.js"
 import { VariableChangeSet, makeSelectorOptions } from "../components/VariableChanger.js"
 import { getCurvePoints } from 'cardinal-spline-js'
 import { CardinalSplineCurver } from "../Curvers.js"
@@ -14,9 +13,6 @@ import BotSystem, { Bot } from "../components/BotSystem"
 import P5Canvas from "../components/P5Canvas"
 import colorSchemes from "../ColorSchemes.js"
 
-const TWO_PI = Math.PI * 2
-const sin = Math.sin
-const cos = Math.cos
 const abs = Math.abs
 const sign = Math.sign
 

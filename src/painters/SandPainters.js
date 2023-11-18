@@ -1,12 +1,7 @@
 import utils from "../utils"
 import colors from "../colors"
-import P5Canvas from "../components/P5Canvas"
-import P5Controller from "../components/P5Controller"
 
 const sin = Math.sin
-const cos = Math.cos
-const abs = Math.abs
-const round = Math.round
 
 // dotter has 2 methods we need: stroke(r,g,b,a) and point(x,y)
 // p5 canvas and images work straight up as does our painter pencil

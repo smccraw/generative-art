@@ -12,15 +12,13 @@ import { easeInQuad } from "../easing"
 const pow = Math.pow
 const sin = Math.sin
 const cos = Math.cos
-const TWO_PI = Math.PI * 2
 
 const width = 800, height = 800
 const CENTER_POS = new Vector(width / 2, height / 2)
 
 export function ParametricEquationTester(props) {
-    let COLOR_SET = ['#5f4736', '#6c5d4e', '#836c53', '#b19979', '#b29158', '#b9a180', '#d9c1a0', '#e0d0b8'].map((c) => colors.ensureColor255(c))
-    COLOR_SET = COLOR_SET.concat(Array.from(COLOR_SET).reverse())
-    let colorLerper = new ColorLerper(COLOR_SET)
+    // let COLOR_SET = ['#5f4736', '#6c5d4e', '#836c53', '#b19979', '#b29158', '#b9a180', '#d9c1a0', '#e0d0b8'].map((c) => colors.ensureColor255(c))
+    // COLOR_SET = COLOR_SET.concat(Array.from(COLOR_SET).reverse())
     let botSys = new ParametricBotSystem(width, height, { x: 0, y: 0, z: 0 })
     let currentT = 0
     let pos = { x: 0, y: 0, z: 1 }
@@ -323,9 +321,6 @@ export function ParametricEquationButterfly(props) {
     let botSys = new BotSystem(width, height)
     botSys.initializeSystem = () => { initializeButterflyParametricBots(botSys) }
 
-    const updateBotPosition = (bot, pos) => {
-        bot.setNewPosition(pos)
-    }
     let speedDenom = 12800
     let loopFrames = speedDenom / 5.91
     botSys.onPreStep = () => { stepButterflyBotsForward(botSys) }
@@ -373,9 +368,6 @@ export function ParametricEquationSand(props) {
     let botSys = new BotSystem(width, height)
     botSys.initializeSystem = () => { initializeButterflyParametricBots(botSys) }
 
-    const updateBotPosition = (bot, pos) => {
-        bot.setNewPosition(pos)
-    }
     let speedDenom = 12800
     let loopFrames = speedDenom / 5.91
     botSys.onPreStep = () => { stepButterflyBotsForward(botSys) }
