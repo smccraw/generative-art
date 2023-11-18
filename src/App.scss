@@ -1,0 +1,186 @@
+.App {
+    display: flex;
+    flex-direction: column;
+
+    .navBar {
+        background-color: rgb(5, 58, 60);
+        text-align: left;
+        padding-top: 4px;
+        padding-left: 8px;
+        border-bottom: 1px solid black;
+        height: 24px;
+        color: white;
+        // overflow: hidden;
+        // position: fixed; /* Set the navbar to fixed position */
+        // top: 0; /* Position the navbar at the top of the page */
+        width: 100%;
+        /* Full width */
+
+        .navLink {
+            display: inline-block;
+            margin-right: 16px;
+
+            a {
+                color: rgb(200, 200, 200);
+                font-size: 1rem;
+                text-decoration: none;
+
+                &.active {
+                    text-decoration: underline;
+                    color: white;
+                }
+            }
+
+            a:hover {
+                text-shadow: 1px 1px 10px #fff, 1px 1px 10px rgb(192, 253, 255);
+            }
+        }
+    }
+
+    .content-body {
+        overflow: scroll;
+        margin-top: 4px;
+        margin-left: 12px;
+    }
+
+    .page-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        font-size: 1.3rem;
+        font-weight: 400;
+        text-align: left;
+
+        p,
+        div.content-p {
+            min-width: 320px;
+            max-width: 750px;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+    }
+
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        font-size: 1.3rem;
+        font-weight: 400;
+        text-align: left;
+
+        p,
+        div.content-p {
+            min-width: 320px;
+            max-width: 750px;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+
+        h2 {
+            margin-top: 48px;
+        }
+    }
+
+    .favorites {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .thumbnail-set {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 810px;
+        gap: 16px;
+    }
+
+    .thumbnail {
+        border: 1px solid black;
+        box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.75);
+    }
+
+    h1,
+    h2,
+    h3 {
+        margin-bottom: 4px;
+    }
+
+    .content-chunk {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding-bottom: 8px;
+        border-bottom: 2px dashed black;
+        margin-bottom: 16px;
+    }
+
+    .simulation-holder {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+
+    .p5-canvas-holder {
+        canvas {
+            border: 1px solid black;
+            box-sizing: content-box;
+        }
+    }
+
+    .tab-bar {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 24px;
+        margin-top: 24px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid rgb(168, 168, 168);
+
+        .tab {
+            font-size: 14pt;
+            cursor: pointer;
+            user-select: none;
+
+            &.active {
+                font-size: 16pt;
+                color: rgb(11, 117, 210);
+                border-bottom: 3px solid rgb(11, 117, 210);
+                padding-bottom: 4px;
+                margin-bottom: -5px;
+            }
+        }
+    }
+
+    .work-display {
+        margin-top: 24px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+        row-gap: 32px;
+
+        .finished-piece {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .tag-line {
+                font-size: 12pt;
+                margin-top: 16px;
+            }
+        }
+    }
+}

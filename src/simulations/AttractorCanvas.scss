@@ -1,0 +1,200 @@
+$light-color: #d8dbe0;
+$dark-color: #28292c;
+
+.AttractorCanvas {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: 10pt;
+
+    .value-selector {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .flex-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .worker-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .preset-selector {
+        select {
+            min-width: 120px;
+        }
+    }
+   
+    .attractor-details {
+        margin-top: 8px;
+        line-height: 1.5;
+
+        .eq {
+            margin-left: 8px;
+
+            sub {
+                font-size: 8pt;
+            }
+        }
+    }
+
+    .param-pickers {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 8px;
+        gap: 4px;
+    }
+
+    .param-picker {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .param_input {
+            width: 76px;
+            margin-left: 4px;
+            margin-right: 8px;
+        }
+    }
+    .attractor-params-panel {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 24px;
+    }
+    .histogram-top {
+        margin-top: 16px;
+    }
+    .generate-progress {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        height: 28px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .generate-button {
+        cursor: pointer;
+        user-select: none;
+        background-color: rgb(0, 165, 0);
+        font-size: 12pt;
+        height: 28px;
+        width: 90px;
+        padding: 4px;
+        text-align: center;
+        border-radius: 4px;
+        border: 1px solid black;
+    }
+    .download-button {
+        cursor: pointer;
+        user-select: none;
+        margin-left: 24px;
+        width: 24px;
+        height: 24px;
+        background: url("../images/buttons.png") -96px 0px;
+    }
+    .cancel-button {
+        cursor: pointer;
+        user-select: none;
+        background-color: rgb(214, 0, 0);
+        font-size: 10pt;
+        height: 24px;
+        width: 60px;
+        padding: 4px;
+        text-align: center;
+        border-radius: 4px;
+        border: 1px solid black;
+        margin-left: 16px;
+    }
+
+    .pp-panel {
+        margin-top: 16px;
+        margin-bottom: 16px;
+
+        .hist-sliders {
+            position: relative;
+
+            .hsl-track {
+                position: absolute;
+                background-color: darkgrey;
+            }
+            .hsl-seg {
+                position: absolute;
+            }
+            .hsl-nub {
+                position: absolute;
+                background-color: black;
+                cursor: pointer;
+            }
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            margin-top: 2px;
+            width: 30px;
+            height: 17px;
+        
+            input { 
+              opacity: 0;
+              width: 0;
+              height: 0;
+            }
+          }
+          .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        
+            &:before {
+              position: absolute;
+              content: "";
+              height: 13px;
+              width: 13px;
+              left: 2px;
+              bottom: 2px;
+              background-color: white;
+              -webkit-transition: .4s;
+              transition: .4s;
+            }
+          }
+          
+          input:checked + .slider {
+            background-color: #2196F3;
+          }
+          
+          input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+          }
+          
+          input:checked + .slider:before {
+            -webkit-transform: translateX(13px);
+            -ms-transform: translateX(13px);
+            transform: translateX(13px);
+          }
+          
+          /* Rounded sliders */
+          .slider.round {
+            border-radius: 17px;
+          }
+          
+          .slider.round:before {
+            border-radius: 50%;
+          }
+    }
+    .iteration_slider {
+        margin-left: 8px;
+    }
+}

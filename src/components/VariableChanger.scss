@@ -1,0 +1,108 @@
+.VariableChanger {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 12px 0px 12px 12px;
+
+    .vc-editor-set {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 12px;
+        align-items: stretch;
+        justify-content: flex-start;
+    }
+
+    .param_holder {
+        display: flex;
+        flex-direction: column;
+        color: black;
+        font-size: 10pt;
+        font-weight: bold;
+        margin-right: 16px;
+    }
+
+    .param_top_row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .param_slider {
+        width: 120px;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        margin-top: 2px;
+        width: 30px;
+        height: 17px;
+
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+
+        &:before {
+            position: absolute;
+            content: "";
+            height: 13px;
+            width: 13px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+    }
+
+    input:checked+.slider {
+        background-color: #2196F3;
+    }
+
+    input:focus+.slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked+.slider:before {
+        -webkit-transform: translateX(13px);
+        -ms-transform: translateX(13px);
+        transform: translateX(13px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 17px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+}
+
+.VariableSeedPicker {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    font-size: 10pt;
+    width: 100%;
+    padding-left: 40px;
+
+    .seed_slider {
+        flex-grow: 1;
+    }
+}

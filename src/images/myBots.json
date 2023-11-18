@@ -1,0 +1,929 @@
+{
+  "bots": [
+    {
+      "pos": {
+        "x": 366.35315278158805,
+        "y": 687.5014237097184
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 221,
+      "clr": {
+        "b": 0,
+        "g": 165,
+        "r": 255,
+        "a": 255
+      },
+      "overlayRadius": 3,
+      "additionalProps": {
+        "orbitor": true,
+        "noPaint": true
+      }
+    },
+    {
+      "pos": {
+        "x": 337.98807371476494,
+        "y": 684.291111419608
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 222,
+      "clr": {
+        "b": 206,
+        "g": 172,
+        "r": 85,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "friend": 2
+      }
+    },
+    {
+      "pos": {
+        "x": 366.35315278158805,
+        "y": 687.5014237097184
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 223,
+      "clr": {
+        "b": 218,
+        "g": 199,
+        "r": 126,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "friend": 0
+      }
+    },
+    {
+      "pos": {
+        "x": 368,
+        "y": 686
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 224,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 388,
+        "y": 663
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 225,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 373,
+        "y": 630
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 226,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 340,
+        "y": 624
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 227,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 313,
+        "y": 638.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 228,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 299,
+        "y": 664.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 229,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 311,
+        "y": 694.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 230,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 334,
+        "y": 706.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 231,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 382,
+        "y": 715.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 232,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 431,
+        "y": 708.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 233,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 456,
+        "y": 690.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 234,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 467,
+        "y": 656.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 235,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 456,
+        "y": 591.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 236,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 374,
+        "y": 272.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 237,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 357,
+        "y": 204.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 238,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 359,
+        "y": 147.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 239,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 381,
+        "y": 92.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 240,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 409,
+        "y": 67.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 241,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 440,
+        "y": 75.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 242,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 458,
+        "y": 113.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 243,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 456,
+        "y": 168.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 244,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 436,
+        "y": 214.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 245,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 407,
+        "y": 253.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 246,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 325,
+        "y": 311.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 247,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 278,
+        "y": 358.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 248,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 249,
+        "y": 422.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 249,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 254,
+        "y": 486.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 250,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 298,
+        "y": 530.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 251,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 356,
+        "y": 555.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 252,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 423,
+        "y": 557.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 253,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 480,
+        "y": 537.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 254,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 517,
+        "y": 490.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 255,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 508,
+        "y": 436.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 256,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 476,
+        "y": 401.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 257,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 428,
+        "y": 394.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 258,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 382,
+        "y": 400.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 259,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 353,
+        "y": 422.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 260,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 335,
+        "y": 452.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 261,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 345,
+        "y": 485.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 262,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 366,
+        "y": 506.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 263,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    },
+    {
+      "pos": {
+        "x": 397,
+        "y": 518.5625
+      },
+      "vel": {
+        "x": 0,
+        "y": 0
+      },
+      "id": 264,
+      "clr": {
+        "b": 255,
+        "g": 255,
+        "r": 0,
+        "a": 255
+      },
+      "overlayRadius": 2,
+      "additionalProps": {
+        "splineBot": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+
+.SketchTweaker {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .controller_row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .variable_row {
+        display: flex;
+        flex-direction: row;
+        margin-top: 8px;
+        margin-left: 4px;
+    }
+    .frameRate_holder {
+        display: flex;
+        flex-direction: row;
+        margin-left: 8px;
+        .frameRate_label {
+            margin-top: 2px;
+            font-size: 10pt;
+        }
+        .frameRate_slider {
+            width: 120px;
+        }
+    }
+
+    .bc_ctrl_btn {
+        cursor: pointer;
+        margin: 4px;
+
+        &.disabled {
+            filter: brightness(50%);
+        }
+    }
+
+    .play_btn {
+        width: 24px;
+        height: 24px;
+        background: url("../images/buttons.png") 0px 0px;
+    }
+
+    .pause_btn {
+        width: 24px;
+        height: 24px;
+        background: url("../images/buttons.png") -24px 0px;
+    }
+
+    .step_btn {
+        width: 24px;
+        height: 24px;
+        background: url("../images/buttons.png") -48px 0px;
+    }
+
+    .reset_btn {
+        width: 24px;
+        height: 24px;
+        background: url("../images/buttons.png") -72px 0px;
+    }
+
+    .download_btn {
+        width: 24px;
+        height: 24px;
+        background: url("../images/buttons.png") -96px 0px;
+    }
+
+    .showBots_btn {
+        width: 24px;
+        height: 24px;
+        background: url("../images/buttons.png") -120px 0px;
+    }
+    .noShowBots_btn {
+        width: 24px;
+        height: 24px;
+        background: url("../images/buttons.png") -144px 0px;
+    }
+
+    .bc-seed-picker {
+        cursor: pointer;
+        user-select: none;
+        font-size: 10pt;
+        position: relative;
+        min-width: 90px;
+        height: 24px;
+        padding-left: 8px;
+        padding-right: 8px;
+        margin-left: 20px;
+        border-radius: 8px;
+        background-color: #d8dbe0;
+        border: 1px solid black;
+        text-align: center;
+        .seed_label {
+            line-height:1.5rem;
+        }
+    }
+}
