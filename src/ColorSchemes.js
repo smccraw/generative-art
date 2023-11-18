@@ -7,6 +7,7 @@ const colorSchemes = [
     { name: "Yellow", defaultBackgroundType: 'dark', colors: ['#ffe232'] },
     { name: "Red", defaultBackgroundType: 'dark', colors: ['#ff0000'] },
     { name: "Purples", defaultBackgroundType: 'dark', colors: ['#ffccfe', '#ffb8fd', '#ffa4fd', '#ff8efc', '#ff73fc', '#fb42fb', '#b919fa', '#9c17fa', '#8016fa', '#6d16fa', '#4e37f9'] },
+    { name: "Dark Purples", defaultBackgroundType: 'dark', colors: ['#d74de0', '#a918ce', '#b919fa', '#9c17fa', '#8016fa', '#6d16fa', '#4a08b4', '#4e37f9'] },
     { name: "Blues", defaultBackgroundType: 'dark', colors: ['#a0fdf3', '#49e7f5','#00d0f7', '#1f9af8', '#2067f8','#2a42f5', '#130093' ]},
     { name: "Cool Blues", defaultBackgroundType: 'dark', colors: ['#ffffff', '#e7fcfb', '#7ec7da', '#55acce', '#2788ab', '#154353','#1c667a']},
     { name: "Fiery", defaultBackgroundType: 'dark', colors: ['#fffec8', '#fffc80', '#ffe232', '#ff9b25', '#ff561e', '#e31a17', '#9c1110'] },

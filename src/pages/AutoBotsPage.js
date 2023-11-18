@@ -1,6 +1,8 @@
 import { useEffect } from "react"
 import { FlourishB, FlourishHeron, FlourishPlay } from "../simulations/Flourishes"
 import { FriendFollow } from "../simulations/FriendFollow"
+import { KooshBall, SpiralDecay } from "../simulations/AutoBots"
+
 export function AutoBotsPage() {
     useEffect(()=> {
         if(document.location.hash !== '') {
@@ -24,10 +26,12 @@ export function AutoBotsPage() {
         <p>Other categories include things like physics based bots, where the laws of physics are observed (gravity, collisions, friction, etc...), as well 
             as simple bots that mimick 'cells' in that they behave according to just a few simple rules and observations about their neighbors (<a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life' >Conway's Game of Life</a> is a prime example of this).
         </p>
+        <SpiralDecay width={800} height={800} />
         <FriendFollow width={800} height={800} />
         <FlourishB width={800} height={800} />
         <FlourishHeron finishedArt={true} />
         <FlourishPlay finishedArt={true} />
+        <KooshBall width={800} height={800} />
         
     </div>
 }

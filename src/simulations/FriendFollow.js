@@ -127,7 +127,7 @@ export function FriendFollow(props) {
         botSystem: botSys,
         backgroundType: 'dark',
         seed: presetOrDef(props, 'seed', 1782),
-        frameRate: presetOrDef(props, 'autoPauseAt', 120),
+        frameRate: presetOrDef(props, 'frameRate', 120),
         showBots: true,
         autoPauseAt: presetOrDef(props, 'autoPauseAt', 10000),
         finishedArt: !!props.finishedArt,
