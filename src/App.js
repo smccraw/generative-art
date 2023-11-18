@@ -2,7 +2,6 @@ import './App.scss';
 import { RecoilRoot } from 'recoil';
 import {BrowserRouter as Router,Routes,Route,NavLink} from "react-router-dom";
 import { HomePage } from './pages/HomePage';
-import { TestBedPage } from './pages/TestBedPage';
 import { AttractorsPage } from './pages/AttractorsPage';
 import { HarmonographsPage } from './pages/HarmonographsPage';
 import { ParametricEqPage } from './pages/ParametricEqsPage';
@@ -10,6 +9,7 @@ import { LineArtPage } from './pages/LineArtPage';
 import { WigglesPage } from './pages/WigglesPage';
 import { AutoBotsPage } from './pages/AutoBotsPage';
 import { FinishedPage } from './pages/FinishedPage';
+// import { TestBedPage } from './pages/TestBedPage';
 
 function App() {
   return (
@@ -36,8 +36,8 @@ function App() {
               <Route path="/attractors" element={<AttractorsPage />} />
               <Route path="/harmonographs" element={<HarmonographsPage />} />
               <Route path="/finished" element={<FinishedPage />} />
-              <Route path="/testbed" element={<TestBedPage />} />
               <Route path="/" element={<HomePage />} />
+              {/* <Route path="/testbed" element={<TestBedPage />} /> */}
             </Routes>
           </div>
         </div>

@@ -430,21 +430,21 @@ function drawLineSegment(gb, x, y, z, state) {
     state.lastPt = { x: pjp[0], y: pjp[1] }
 }
 
-function drawMarkerPoint(gb, x, y, z, state) {
-    let rotated = { x, y, z }
-    if (state.xrot !== 0) {
-        rotated = rotateAroundX(rads(state.xrot), rotated.x, rotated.y, rotated.z)
-    }
-    if (state.yrot !== 0) {
-        rotated = rotateAroundY(rads(state.yrot), rotated.x, rotated.y, rotated.z)
-    }
-    if (state.zrot !== 0) {
-        rotated = rotateAroundZ(rads(state.zrot), rotated.x, rotated.y, rotated.z)
-    }
+// function drawMarkerPoint(gb, x, y, z, state) {
+//     let rotated = { x, y, z }
+//     if (state.xrot !== 0) {
+//         rotated = rotateAroundX(rads(state.xrot), rotated.x, rotated.y, rotated.z)
+//     }
+//     if (state.yrot !== 0) {
+//         rotated = rotateAroundY(rads(state.yrot), rotated.x, rotated.y, rotated.z)
+//     }
+//     if (state.zrot !== 0) {
+//         rotated = rotateAroundZ(rads(state.zrot), rotated.x, rotated.y, rotated.z)
+//     }
 
-    let pjp = state.projection.getProjectedPoint([rotated.x + state.xoffset, rotated.y + state.yoffset, rotated.z + state.zoffset])
-    gb.circle(pjp[0], pjp[1], 4)
-}
+//     let pjp = state.projection.getProjectedPoint([rotated.x + state.xoffset, rotated.y + state.yoffset, rotated.z + state.zoffset])
+//     gb.circle(pjp[0], pjp[1], 4)
+// }
 
 
 function buildLineSegmentState(controller, zDepth) {

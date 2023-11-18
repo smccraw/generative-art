@@ -207,7 +207,7 @@ export function* iterateContiguousPoints(curver, resolution) {
         //     pt = utils.quantizePoint(pt)
         // }
         if (nextPt.x === lastPt.x) {
-            if (nextPt.y != lastPt.y) {
+            if (nextPt.y !== lastPt.y) {
                 let cnt = Math.abs(nextPt.y - lastPt.y)
                 let dy = Math.sign(nextPt.y - lastPt.y)
                 let y = lastPt.y + dy

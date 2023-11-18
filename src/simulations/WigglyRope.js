@@ -2,7 +2,7 @@ import React from "react"
 import get from "lodash.get"
 import colors, {ColorAutoLerper} from "../colors.js"
 import utils from "../utils.js"
-import Vector, { rads } from "../Vector.js"
+import Vector from "../Vector.js"
 import SketchTweaker from "../components/SketchTweaker.js"
 import { drawSandSplineGrains } from "../painters/SandPainters.js"
 import { drawSolidSpline, drawDeltaSolidSpline } from "../painters/LinePainters.js"
@@ -14,11 +14,8 @@ import P5Canvas from "../components/P5Canvas.js"
 import * as CANNON from 'cannon-es'
 import colorSchemes from "../ColorSchemes.js"
 
-const TWO_PI = Math.PI * 2
 const sin = Math.sin
 const cos = Math.cos
-const abs = Math.abs
-const sign = Math.sign
 
 function createShapeRotator(type, topShapeX, topShapeY, topShapeWidth, topShapeHeight, controller) {
     if (type === 'Infinity') {

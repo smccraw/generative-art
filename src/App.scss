@@ -1,6 +1,7 @@
 .App {
     display: flex;
     flex-direction: column;
+    overflow: scroll;
 
     .navBar {
         background-color: rgb(5, 58, 60);
@@ -51,6 +52,8 @@
         font-size: 1.3rem;
         font-weight: 400;
         text-align: left;
+        overflow: scroll;
+        min-width: 800px;
 
         p,
         div.content-p {
@@ -70,6 +73,7 @@
         font-size: 1.3rem;
         font-weight: 400;
         text-align: left;
+        min-width: 800px;
 
         p,
         div.content-p {

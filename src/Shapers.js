@@ -30,7 +30,7 @@ export function getBresenhamPoints(startX, startY, endX, endY, includeEndPts) {
         }
 
         // should we return the end point?
-        if ((pointX == endX) && (pointY == endY)) {
+        if ((pointX === endX) && (pointY === endY)) {
             if (includeEndPts) {
                 points.push({ "x": pointX, "y": pointY })
             }
@@ -72,7 +72,7 @@ export function* iterateBresenhamPoints(startX, startY, endX, endY, includeEndPt
         }
 
         // should we return the end point?
-        if ((pointX == endX) && (pointY == endY)) {
+        if ((pointX === endX) && (pointY === endY)) {
             if (includeEndPts) {
                 yield { "x": pointX, "y": pointY }
             }

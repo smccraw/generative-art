@@ -1,5 +1,3 @@
-import colors from '../colors.js'
-import utils from '../utils.js'
 import Vector from "../Vector.js"
 import { ProjectionCalculator3d } from 'projection-3d-2d';
 

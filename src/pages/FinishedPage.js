@@ -76,11 +76,11 @@ function finishedWorkItem(imageName, tagLine) {
 
     if (tagLine) {
         return <div key={key} className='finished-piece'>
-            <img className='thumbnail' src={srcUrl} />
+            <img className='thumbnail' src={srcUrl} alt="finished-artwork" />
             <div className='tag-line'>{tagLine}</div>
         </div>
     } else {
-        return <div key={key} className='finished-piece'><img className='thumbnail' src={srcUrl} /></div>
+        return <div key={key} className='finished-piece'><img className='thumbnail' src={srcUrl} alt="finished-artwork"/></div>
     }
 
 }

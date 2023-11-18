@@ -1,5 +1,4 @@
 import colors from '../colors.js'
-import utils from '../utils.js'
 import Vector from "../Vector.js"
 import { CardinalSplineCurver } from "../Curvers.js"
 

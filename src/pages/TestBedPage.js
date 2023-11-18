@@ -1,4 +1,3 @@
-import { StraightCircle, MechanicalBloom2} from "../simulations/Spirographs"
 import { FlourishB } from "../simulations/Flourishes"
 
 export function TestBedPage() {

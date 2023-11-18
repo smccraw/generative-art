@@ -24,11 +24,11 @@ export function WigglesPage() {
         <br />
         <p>Here are some of my favorites that I've generated using the above system.</p>
         <div className='favorites'>
-            <img className='thumbnail' src='https://gen-art-images.s3.us-west-2.amazonaws.com/wigglyRope1.jpg' />
-            <img className='thumbnail' src='https://gen-art-images.s3.us-west-2.amazonaws.com/wigglyRope2.jpg' />
-            <img className='thumbnail' src='https://gen-art-images.s3.us-west-2.amazonaws.com/wigglyRope4.jpg' />
-            <img className='thumbnail' src='https://gen-art-images.s3.us-west-2.amazonaws.com/wigglyRope3.jpg' />
-            <img className='thumbnail' src='https://gen-art-images.s3.us-west-2.amazonaws.com/wigglyRope5.jpg' />
+            <img className='thumbnail' src='https://gen-art-images.s3.us-west-2.amazonaws.com/wigglyRope1.jpg' alt="finished-artwork" />
+            <img className='thumbnail' src='https://gen-art-images.s3.us-west-2.amazonaws.com/wigglyRope2.jpg' alt="finished-artwork" />
+            <img className='thumbnail' src='https://gen-art-images.s3.us-west-2.amazonaws.com/wigglyRope4.jpg' alt="finished-artwork" />
+            <img className='thumbnail' src='https://gen-art-images.s3.us-west-2.amazonaws.com/wigglyRope3.jpg' alt="finished-artwork" />
+            <img className='thumbnail' src='https://gen-art-images.s3.us-west-2.amazonaws.com/wigglyRope5.jpg' alt="finished-artwork" />
         </div>
     </div>
 }
