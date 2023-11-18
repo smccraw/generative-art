@@ -391,7 +391,7 @@ export default class BotSystem {
             let positions = []
             this.bots.forEach((bot) => {
                 delete bot.originalDragPosition
-                positions.push({x: bot.xInt(), y: bot.yInt()})
+                positions.push({ x: bot.xInt(), y: bot.yInt() })
             })
             console.log("Bot Positions", JSON.stringify(positions))
         }
@@ -522,6 +522,7 @@ export class Moveable {
         this.vel = new Vector(0, 0)
         this.forces = new Vector(0, 0)
         this.mass = 1
+        this.skipUpdates = false
     }
     serializeInto(sbot) {
         sbot.pos = { x: this.pos.x, y: this.pos.y }
@@ -565,24 +566,26 @@ export class Moveable {
         }
     }
     update(fixedVelocity, maxVelocity) {
-        this.vel.set(this.vel.x + this.forces.x, this.vel.y + this.forces.y)
+        if (!this.skipUpdates) {
+            this.vel.set(this.vel.x + this.forces.x, this.vel.y + this.forces.y)
 
-        if (fixedVelocity) {
-            let mag = this.vel.mag()
-            if (mag !== fixedVelocity) {
-                this.vel = this.vel.unit().mult(fixedVelocity)
+            if (fixedVelocity) {
+                let mag = this.vel.mag()
+                if (mag !== fixedVelocity) {
+                    this.vel = this.vel.unit().mult(fixedVelocity)
+                }
+            } else if (maxVelocity) {
+                let mag = this.vel.mag()
+                if (mag > maxVelocity) {
+                    this.vel = this.vel.mult(maxVelocity / mag)
+                }
             }
-        } else if (maxVelocity) {
-            let mag = this.vel.mag()
-            if (mag > maxVelocity) {
-                this.vel = this.vel.mult(maxVelocity / mag)
-            }
-        }
 
-        if (this.vel.x !== 0 || this.vel.y !== 0) {
-            this.setNewPosition(this.pos.x + this.vel.x, this.pos.y + this.vel.y)
+            if (this.vel.x !== 0 || this.vel.y !== 0) {
+                this.setNewPosition(this.pos.x + this.vel.x, this.pos.y + this.vel.y)
+            }
+            this.forces.set(0, 0)
         }
-        this.forces.set(0, 0)
     }
 
 }

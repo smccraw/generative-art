@@ -90,6 +90,7 @@ export function HomePage() {
             <a href='./autobots'><img alt='thumbnail' className='thumbnail' src='https://gen-art-images.s3.us-west-2.amazonaws.com/friendFollow1_thumb.jpg'></img></a>
             <a href='./autobots#flourishb'><img alt='thumbnail' className='thumbnail' src='https://gen-art-images.s3.us-west-2.amazonaws.com/flourishB_thumb.jpg'></img></a>
             <a href='./autobots#flourishheron'><img alt='thumbnail' className='thumbnail' src='https://gen-art-images.s3.us-west-2.amazonaws.com/flourishHeron_thumb.jpg'></img></a>
+            <a href='./autobots#kooshball'><img alt='thumbnail' className='thumbnail' src='https://gen-art-images.s3.us-west-2.amazonaws.com/kooshBall_thumb.jpg'></img></a>
         </div>
     </div>
 }

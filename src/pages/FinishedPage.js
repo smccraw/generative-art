@@ -47,6 +47,7 @@ export function FinishedPage() {
         pieces.push(finishedWorkItem('flourishB.jpg'))
         pieces.push(finishedWorkItem('flourishHeron.jpg'))
         pieces.push(finishedWorkItem('flourishBird.jpg'))
+        pieces.push(finishedWorkItem('kooshBall.jpg'))
         pieces.push(finishedWorkItem('friendFollow1.jpg'))
         pieces.push(finishedWorkItem('FriendChaser2Orbitals.jpg'))
         pieces.push(finishedWorkItem('FriendChaserAxisRestricted.jpg', 'Friendly autobots but restricted to X/Y axis movement'))

@@ -9,7 +9,6 @@ import P5Canvas from "../components/P5Canvas.js"
 import { VariableChangeSet, makeSelectorOptions, presetOrDef } from "../components/VariableChanger.js"
 import colorSchemes from "../ColorSchemes.js"
 
-const cos = Math.cos
 const abs = Math.abs
 
 const TWO_PI = Math.PI * 2
@@ -22,6 +21,7 @@ export function KooshBall(props) {
     let colorLerper = null
     variableSet.addNumberSlider('opacity', 'Opacity', 0.01, 1, 0.01, presetOrDef(props, 'opacity', 0.5))
     variableSet.addSelector('colorScheme', "Colors", makeSelectorOptions(colorSchemes), presetOrDef(props, 'colorScheme', 9))
+    variableSet.addSwitch('rainbow', "Rainbow Colors", false)
 
     botSys.CENTER_POS = new Vector(width / 2, height / 2)
 
@@ -57,11 +57,11 @@ export function KooshBall(props) {
 
     controller.updateSketch = (p5, sketchBuffer) => {
         botSys.bots.forEach((bot, idx) => {
-            bot.paint(sketchBuffer, colorLerper, variableSet.getValue('opacity'))
+            bot.paint(sketchBuffer, colorLerper, variableSet.getValue('opacity'), variableSet.getValue('rainbow'))
         })
     }
 
-    return <div id='friendfollow1' className='content-chunk'>
+    return <div id='kooshBall' className='content-chunk'>
         <h3>Koosh Ball</h3>
         <p>Spindly little tendrils emerging from the center and then randomly wander outward from the center.
             Looks like a <a href='https://en.wikipedia.org/wiki/Koosh_ball'>Koosh ball</a> when it's done.</p>
@@ -127,12 +127,17 @@ class E2Bot extends Bot {
             }
         }
     }
-    paint(gb, colorLerper, opacity) {
+    paint(gb, colorLerper, opacity, rainbowColors) {
         let alpha = colors.ensureAlpha255(opacity)
         let dx = this.pos.x - this.botSys.CENTER_POS.x
         let dy = this.pos.y - this.botSys.CENTER_POS.y
 
         let clr = this.clr
+
+        if (rainbowColors) {
+            clr = colorLerper.getNextColor()
+        }
+
         gb.stroke(clr.r, clr.g, clr.b, alpha)
         gb.point(this.pos.x, this.pos.y)
         // mirrored 180 around the center
@@ -164,8 +169,10 @@ export function SpiralDecay(props) {
     let controller
     let colorLerper = null
     variableSet.addNumberSlider('botCount', 'Bots', 1, 128, 1, presetOrDef(props, 'botCount', 32))
-    variableSet.addNumberSlider('opacity', 'Opacity', 0.01, 1, 0.01, presetOrDef(props, 'opacity', 0.2))
-    variableSet.addSelector('colorScheme', "Colors", makeSelectorOptions(colorSchemes), presetOrDef(props, 'colorScheme', 9))
+    variableSet.addSelector('paintType', 'Paint Type', makeSelectorOptions(['Breadcrumbs', 'Trailing Glow']), presetOrDef(props, 'paintType', 0))
+    variableSet.addNumberSlider('opacity', 'Opacity', 0.01, 1, 0.01, presetOrDef(props, 'opacity', 0.3))
+    variableSet.addSelector('colorScheme', "Colors", makeSelectorOptions(colorSchemes), presetOrDef(props, 'colorScheme', 7))
+    variableSet.addSwitch('rainbow', "Rainbow Colors", false)
 
     botSys.CENTER_POS = new Vector(width / 2, height / 2)
 
@@ -186,6 +193,20 @@ export function SpiralDecay(props) {
         while (Math.abs(bot.decayAcceleration) < 0.00001) {
             bot.decayAcceleration = rand.jitterRandom(0.0008);
         }
+
+        bot.tracerBot.overlayRadius = 0
+        bot.tracerBot.clr = bot.clr
+        bot.tracerBot.pos = new Vector(bot.pos)
+        bot.tracerBot.angle = bot.angle
+        bot.tracerBot.initialAngle = bot.initialAngle
+        bot.tracerBot.oobFrames = bot.oobFrames
+        bot.tracerBot.decayVel = bot.decayVel
+        bot.tracerBot.decayAcceleration = bot.decayAcceleration
+        bot.tracerBot.speed = bot.speed
+        bot.tracerBot.speedMx = bot.speedMx
+        bot.tracerBot.lagFrames = rand.randomIntBetween(4, 10)
+        bot.tracerBot.birthFrame = bot.birthFrame + bot.tracerBot.lagFrames
+        bot.tracerBot.skipUpdates = true
     }
 
     botSys.initializeSystem = (sys, controller) => {
@@ -195,31 +216,39 @@ export function SpiralDecay(props) {
         botSys.reset();
         botSys.setAllElasticities(-1)
         colorLerper = new ColorAutoLerper(colorScheme.colors, 0.0001)
-       
+
         for (let i = 0; i < botCount; i++) {
             let bot = new Bot()
             bot.id = i + 1
+            bot.tracerBot = new Bot()
+            bot.tracerBot.id = bot.id
+            bot.tracerBot.isTracer = true
+            bot.tracerBot.skipUpdates = true
             rebirth(bot)
 
             bot.pos = new Vector(rand.jitterRandom(16), rand.jitterRandom(16)).add(botSys.CENTER_POS)
             bot.angle = bot.pos.subtr(botSys.CENTER_POS).angle() + rand.jitterRandom(0.11)
+            bot.tracerBot.pos = new Vector(bot.pos)
+            bot.tracerBot.angle = bot.angle
             bot.overlayRadius = 3
 
             botSys.addBot(bot)
+            botSys.addBot(bot.tracerBot)
         }
     }
 
-    botSys.onPreStep = () => {
-        botSys.bots.forEach((bot, idx) => {
-            bot.vel = new Vector(bot.speed, 0).rotate(bot.angle)
-            bot.angle += bot.decayVel
-            bot.decayVel += bot.decayAcceleration
+    const updateBotTrajectories = (bot) => {
+        bot.vel = new Vector(bot.speed, 0).rotate(bot.angle)
+        bot.angle += bot.decayVel
+        bot.decayVel += bot.decayAcceleration
 
-            bot.speed *= bot.speedMx;
+        bot.speed *= bot.speedMx;
 
-            if (Math.abs(bot.speed) < 0.2) {
-                bot.speedMx = 1.002
-            }
+        if (Math.abs(bot.speed) < 0.2) {
+            bot.speedMx = 1.002
+        }
+        
+        if (!bot.isTracer) {
             if (Math.abs(bot.angle - bot.initialAngle) > (Math.PI * 6)) { // done 3 full loops?
                 rebirth(bot)
             }
@@ -234,14 +263,32 @@ export function SpiralDecay(props) {
 
             // 50 frame fade in on every rebirth
             bot.fadeAlpha = (bot.birthFrame > 0) ? Math.min(1, (controller.frameCount - bot.birthFrame) / 50) : 1
+        }
+    }
+    botSys.onPreStep = () => {
+        let paintType = variableSet.getValue('paintType')
+        botSys.bots.forEach((bot, idx) => {
+            if (bot.isTracer) {
+                if (bot.lagFrames > 0) {
+                    bot.lagFrames--
+                } else {
+                    bot.skipUpdates = false
+                    if (paintType === 'Trailing Glow') {
+                        bot.overlayRadius = 1
+                    }
+                    updateBotTrajectories(bot)
+                }
+            } else {
+                updateBotTrajectories(bot)
+            }
         })
     }
 
     controller = new P5Controller({
         botSystem: botSys,
-        backgroundType: 'light',
+        backgroundType: 'dark',
         seed: presetOrDef(props, 'seed', 1782),
-        frameRate: presetOrDef(props, 'frameRate', 24),
+        frameRate: presetOrDef(props, 'frameRate', 60),
         showBots: true,
         autoPauseAt: presetOrDef(props, 'autoPauseAt', 10000),
         finishedArt: !!props.finishedArt,
@@ -250,10 +297,32 @@ export function SpiralDecay(props) {
 
     controller.updateSketch = (p5, sketchBuffer) => {
         let opacity = variableSet.getValue('opacity')
+        let paintType = variableSet.getValue('paintType')
+        if (paintType === 'Trailing Glow') {
+            opacity /= 1.5
+        }
         botSys.bots.forEach((bot, idx) => {
-            if (bot.lastPos) {
-                sketchBuffer.stroke(bot.clr.r, bot.clr.g, bot.clr.b, colors.ensureAlpha255(opacity))
-                sketchBuffer.line(bot.lastPos.x, bot.lastPos.y, bot.pos.x, bot.pos.y)
+            let clr = bot.clr
+            if (variableSet.getValue('rainbow')) {
+                clr = colorLerper.getNextColor()
+            }
+            if (!bot.isTracer) {
+                if (paintType === 'Trailing Glow') {
+                    if (bot.tracerBot.lagFrames === 0) {
+                        sketchBuffer.stroke(clr.r, clr.g, clr.b, colors.ensureAlpha255(opacity * bot.fadeAlpha / 4))
+                        sketchBuffer.line(bot.tracerBot.pos.x, bot.tracerBot.pos.y, bot.pos.x, bot.pos.y)
+                        if (Math.abs(bot.vel.x) >= Math.abs(bot.vel.y)) {
+                            sketchBuffer.line(bot.tracerBot.pos.x, bot.tracerBot.pos.y-1, bot.pos.x, bot.pos.y-1)
+                            sketchBuffer.line(bot.tracerBot.pos.x, bot.tracerBot.pos.y+1, bot.pos.x, bot.pos.y+1)
+                        } else {
+                            sketchBuffer.line(bot.tracerBot.pos.x-1, bot.tracerBot.pos.y, bot.pos.x-1, bot.pos.y)
+                            sketchBuffer.line(bot.tracerBot.pos.x+1, bot.tracerBot.pos.y, bot.pos.x+2, bot.pos.y)
+                        }
+                    }
+                } else {
+                    sketchBuffer.stroke(clr.r, clr.g, clr.b, colors.ensureAlpha255(opacity * bot.fadeAlpha))
+                    sketchBuffer.point(bot.pos.x, bot.pos.y)
+                }
             }
         })
     }
@@ -261,11 +330,14 @@ export function SpiralDecay(props) {
     controller.updateOverlay = (p5, sketchBuffer) => {
         if (controller.showBots) {
             botSys.bots.forEach((bot) => {
-                p5.stroke(0, 255, 255)
-                p5.line(bot.pos.x, bot.pos.y, bot.pos.x + bot.vel.x * 4, bot.pos.y + bot.vel.y * 4)
+                if (!bot.isTracer) {
+                    p5.stroke(0, 255, 255)
+                    p5.line(bot.pos.x, bot.pos.y, bot.pos.x + bot.vel.x * 4, bot.pos.y + bot.vel.y * 4)
+                }
             })
         }
     }
+
     return <div id='friendfollow1' className='content-chunk'>
         <h3>Spiral Decay</h3>
         <p>Spiral decay works kinda like that shopping cart with the sticky wheel. Each bot is giving a slight pull to the left or right that gets worse over time.
